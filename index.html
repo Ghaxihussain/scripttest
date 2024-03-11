@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="Hello.js"></script>
+    <script src="Goodbye.js"></script>
+    <script src="script.js"></script>
+    <style>
+      body {
+    margin: 0;
+    padding: 0;
+    background-color: #282c34; /* Dark background color */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.heading {
+    font-size: 2vh;
+    font-weight: lighter;
+    text-align: center;
+    padding: 20px;
+    color: #61dafb; /* Accent color for the heading */
+}
+
+.Content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.code-container {
+    width: 100%;
+    overflow: auto;
+    border: 1px solid #2c3ca5;
+    padding: 15px;
+    background-color: #2d2d2d; /* Darker background color for code container */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    color: white; 
+}
+
+.line-numbers code::before {
+    content: counter(line);
+    counter-increment: line;
+    padding-right: 1em;
+    color: #ffffff;
+    display: inline-block;
+}
+
+.full-width {
+    width: 80%;
+}
+
+.halfwidth {
+    width: 45%;
+    box-sizing: border-box;
+    padding-right: 10px;
+    margin: 10px; /* Optional: Adjust padding for better spacing */
+}
+
+/* Add a clear fix to prevent layout issues */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body{
+    color: white; 
+}
+code{
+    color: white; 
+}
+.text{
+    color: white;
+    font-size: medium;
+}
+@media screen and (max-width: 600px) {
+    /* Adjustments for smaller screens */
+    .code-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .halfwidth {
+        width: 100%;
+        box-sizing: border-box;
+        padding-right: 0;
+        margin: 10px 0;
+    }
+
+    .heading {
+        font-size: 1.5vh;
+    }
+
+    .text {
+        font-size: small;
+    }
+
+    /* Add more adjustments as needed */
+}
+
+
+    </style>
+    <title>Code Display</title>
+</head>
+<body>
+    <div class="heading">
+        <h1>Hi MATE! SEE THE OUTPUT AND THE REAL CODE IN CONSOLE</h1>
+    </div>
+    
+    <div class="Content clearfix">
+        <div class="code-container full-width">
+            <h2>script.js</h2>
+            <pre>
+                <code class="line-numbers text">
+1.  ( function greet(name){
+2.      var name = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+3.                     
+4.      for (var i = 0; i < name.length; i++){
+5.          if (name[i][0].toUpperCase() === "J") {
+6.              bye_speaker.speak(name[i]);
+7.          }
+8.          else {
+9.              hello_speaker.speak(name[i]);
+10.      }
+11.  }
+12.  })()
+            
+                </code>
+            </pre>
+        </div>
+        <!-- Script 1: Hello.js -->
+        <div class="code-container halfwidth">
+            <h2>Hello.js</h2>
+            <pre>
+                <code class="line-numbers text">
+1.    (function(window){
+2.        var hello= "Hello";
+3.        var hello_speaker = {};
+4.        hello_speaker.speak = function(name){
+5.            console.log(hello + " " + name);
+6.        }
+7.        window.hello_speaker = hello_speaker;
+9.    })(window);
+                </code>
+            </pre>
+        </div>
+
+        <!-- Script 2: Goodbye.js -->
+        <div class="code-container halfwidth" id = "gb">
+            <h2>Goodbye.js</h2>
+            <pre>
+                <code class="line-numbers text">
+1.    (function(window){
+2.        var bye = "Good bye";
+3.         var bye_speaker = {}
+4.        bye_speaker.speak  = function(name){
+5.            console.log(bye + " " + name);
+6.        }
+7.        window.bye_speaker = bye_speaker;
+8.    })(window)
+                </code>
+            </pre>
+        </div>
+
+        <!-- Script 3: script.js (Full Width) -->
+        
+    </div>
+
+    <!-- Bootstrap JS and jQuery (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
